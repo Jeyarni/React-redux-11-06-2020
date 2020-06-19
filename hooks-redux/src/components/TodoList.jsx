@@ -1,20 +1,21 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteTodoAction } from "../action/todo-action";
-import { Card, Button } from "antd";
+import { Card } from "antd";
+import { DeleteTwoTone, EditTwoTone } from "@ant-design/icons";
 
 export default () => {
   const todos = useSelector((state) => state.todoReducer.todos);
   const dispatch = useDispatch();
-
   const todoTable = todos.map((todo) => {
     return (
       <tr key={todo.id}>
         <td>{todo.name}</td>
         <td>
-          <Button onClick={() => dispatch(deleteTodoAction(todo.id))}>
-            X
-          </Button>
+          <DeleteTwoTone
+            onClick={() => dispatch(deleteTodoAction(todo.id))}
+            style={{ fontSize: "18px" }}
+          />
         </td>
       </tr>
     );
@@ -27,6 +28,7 @@ export default () => {
           <thead>
             <tr>
               <th>Todo</th>
+              <th></th>
               <th></th>
             </tr>
           </thead>

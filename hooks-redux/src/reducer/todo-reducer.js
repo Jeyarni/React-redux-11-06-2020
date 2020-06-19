@@ -3,8 +3,8 @@ import { v4 as uuid } from "uuid";
 
 const initialState = {
   todos: [
-    { id: uuid(), name: "React JS is a JavaScript library", complete: false },
-    { id: uuid(), name: " It is maintained by Facebook", complete: false },
+    { id: uuid(), name: "React JS is a JavaScript library" },
+    { id: uuid(), name: " It is maintained by Facebook" },
   ],
 };
 
